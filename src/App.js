@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import "../src/index.css";
+import Background from "./components/Background";
+import Search from "./components/Search/SearchBar";
+import Result from "./components/Result";
 function App() {
+  const [weather, setWeather] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="app">
+      <Background background={weather.weather && weather.weather[0].main}></Background>
+      <div id="title"> WEATHER APP</div>
+      <Search setWeather={setWeather}></Search>
+      <Result weather={weather}></Result>
+    </section>
   );
 }
 
