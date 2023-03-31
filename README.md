@@ -1,1 +1,1 @@
-# Application that shows the weather by entering the city
+# Application that shows the weather by entering any city from the world.
